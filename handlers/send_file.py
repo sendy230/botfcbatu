@@ -9,7 +9,7 @@ from handlers.helpers import str_to_b64
 async def ReplyForward(message: Message, file_id: int):
     try:
         await message.reply_text(
-            f"https://t.me/{Config.BOT_USERNAME}?start={str_to_b64(str(file_id))}\n\n"
+            f"https://t.me/{Config.BOT_USERNAME}?start={str_to_b64(str(file_id))}\n\n",
             disable_web_page_preview=True, quote=True)
     except FloodWait as e:
         await asyncio.sleep(e.x)
